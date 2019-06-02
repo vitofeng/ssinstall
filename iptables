@@ -1,0 +1,28 @@
+# 允许本地回环接口(即运行本机访问本机)
+iptables -A INPUT -i lo -j ACCEPT
+# 允许ping
+iptables -A INPUT -p icmp -j ACCEPT
+# 允许已建立的或相关连的通行
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+# 允许访问22端口
+#iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+# 允许访问80端口
+#iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+# 允许ftp服务的21端口
+#iptables -A INPUT -p tcp --dport 21 -j ACCEPT
+# 允许FTP服务的20端口
+#iptables -A INPUT -p tcp --dport 20 -j ACCEPT
+# 允许ssh端口
+iptables -A INPUT -p tcp -m tcp --dport 22 -j DROP
+iptables -A INPUT -p tcp -m tcp --dport 28556 -j ACCEPT
+# 允许SS端口
+iptables -A INPUT -p tcp --dport 9003 -j ACCEPT
+iptables -A INPUT -p udp --dport 9003 -j ACCEPT
+# 允许kms端口
+iptables -A INPUT -p tcp --dport 1688 -j ACCEPT
+# 允许kcp端口
+iptables -A INPUT -p udp --dport 2333 -j ACCEPT
+# 禁止其他未允许的规则访问
+iptables -A INPUT -j REJECT
+# 禁止其他未允许的规则访问
+#iptables -A FORWARD -j REJECT
