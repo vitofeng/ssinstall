@@ -39,7 +39,8 @@ software=(Shadowsocks-Python ShadowsocksR Shadowsocks-Go Shadowsocks-libev)
 
 libsodium_file="libsodium-1.0.18"
 # libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.18/libsodium-1.0.18.tar.gz"
-libsodium_url="https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz"
+# libsodium_url="https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz"
+libsodium_url="https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz"
 
 mbedtls_file="mbedtls-2.16.0"
 mbedtls_url="https://tls.mbed.org/download/mbedtls-2.16.0-gpl.tgz"
